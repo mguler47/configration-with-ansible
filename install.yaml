@@ -6,7 +6,7 @@
   connection: ssh
   ignore_errors: false
   task:
-    -name: Task Nmae Here
+    -name: Task Name Here
       ping:
     - name: Install telnet
       package: 

@@ -1,0 +1,12 @@
+---
+- name: Zip logs 
+  hosts: all
+  become: true
+  become_method: sudo
+  connection: ssh
+  ignore_errors: false
+  tasks:
+    - name: Perform Find command
+      ping:     shell: "find   /    -type f    -name  *.lo     -mtime +90    -exec gzip -v9 {} \;"
+    - name: perform find command 
+      shell:     shell: "find  /var/log  -type f    -size +1G   - name*.log     -exec gzip -v9 {} \;"
